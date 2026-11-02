@@ -1,0 +1,32 @@
+# Mirage backend - Python 3.10
+# Install PyTorch separately (see bottom of file).
+
+# Web
+Django>=5.2,<5.3
+djangorestframework>=3.15,<3.17
+djangorestframework-simplejwt>=5.3,<6
+django-cors-headers>=4.4,<5
+
+# Real-time
+channels>=4.1,<5
+channels-redis>=4.2,<5
+daphne>=4.1,<5
+
+# Task queue
+celery>=5.4,<5.6
+redis>=5.0,<6
+
+# Database and config
+pymongo>=4.8,<5
+python-dotenv>=1.0,<2
+
+# ML / DL support
+numpy==1.26.4
+pandas>=2.2,<2.3
+scikit-learn>=1.5,<1.6
+joblib>=1.4,<2
+Pillow>=10.4,<11
+mediapipe==0.10.14
+
+# PyTorch (CPU build) - run separately:
+#   pip install torch==2.3.1 torchvision==0.18.1 --index-url https://download.pytorch.org/whl/cpu
