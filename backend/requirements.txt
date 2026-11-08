@@ -17,7 +17,7 @@ celery>=5.4,<5.6
 redis>=5.0,<6
 
 # Database and config
-pymongo>=4.8,<5
+pymongo[srv]>=4.8,<5   # [srv] lets the same code connect to MongoDB Atlas later
 python-dotenv>=1.0,<2
 
 # ML / DL support
