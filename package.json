@@ -1,0 +1,31 @@
+{
+  "name": "mirage",
+  "version": "1.0.0",
+  "description": "Mirage - adaptive social-skills platform (software prototype)",
+  "main": "index.js",
+  "scripts": {
+    "backend": "cd backend && .venv\\Scripts\\daphne -p 8000 main.asgi:application",
+    "celery": "cd backend && .venv\\Scripts\\celery -A main worker --pool=solo -l info",
+    "frontend": "cd frontend && npm start",
+    "dev": "concurrently -n backend,celery,frontend -c blue,magenta,green \"npm run backend\" \"npm run celery\" \"npm run frontend\"",
+    "migrate": "cd backend && .venv\\Scripts\\python manage.py migrate",
+    "check:redis": "cd backend && .venv\\Scripts\\python check_redis.py",
+    "test:backend": "cd backend && .venv\\Scripts\\python manage.py test",
+    "train:rf": "cd backend && .venv\\Scripts\\python -m ml_training.train_engagement_rf",
+    "simulate": "cd backend && .venv\\Scripts\\python fake_client.py"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Draco437/MIRAGE.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Draco437/MIRAGE/issues"
+  },
+  "homepage": "https://github.com/Draco437/MIRAGE#readme",
+  "devDependencies": {
+    "concurrently": "^10.0.7"
+  }
+}
